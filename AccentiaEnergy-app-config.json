@@ -1,0 +1,14 @@
+{
+    "apps": [
+        {
+            "name":"",
+            "cwd":"",
+            "script":"server.js",
+            "env": {
+                "MODE":"PRO",
+                "PORT":8080,
+                "HOST":"127.0.0.1"
+            }
+        }
+    ]
+}
