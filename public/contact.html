@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Contact || Accentia Energy</title>
+    <title>Contact || Acentia Energy</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -325,7 +325,7 @@
                             <!-- End Single Footer -->
                             <!-- Start Single Footer -->
                             <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12 xmt-40">
-                                <div class="footer quick__link foo">
+                                <!-- <div class="footer quick__link foo">
                                     <div class="footer__widget">
                                         <h2 class="ft__title">QUICK LINKS</h2>
                                     </div>
@@ -343,7 +343,7 @@
                                             <li><a href="#">Features</a></li>
                                         </ul>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <!-- End Single Footer -->
                             <!-- Start Single Footer -->
@@ -373,7 +373,7 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="copyright__inner">
-                                <p>&copy; Accentia Energy. All Rights Reserved 2020</p>
+                                <p>&copy; Acentia Energy. All Rights Reserved 2020</p>
                             </div>
                         </div>
                     </div>
@@ -395,7 +395,7 @@
     <script src="js/owl.carousel.min.js"></script>
 
     <!-- Google Map js -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmGmeot5jcjdaJTvfCmQPfzeoG_pABeWo "></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChFx6FS9j_GCXkvaJYOzm9G_ZrO9z6svw "></script>
     <script>
         // When the window has finished loading create our google map below
         google.maps.event.addDomListener(window, 'load', init);
@@ -410,7 +410,7 @@
                 scrollwheel: false,
 
                 // The latitude and longitude to center the map (always required)
-                center: new google.maps.LatLng(23.7286, 90.3854), // New York
+                center: {lat: 42.3601, lng: 71.0589}, // New York
 
                 // How you would like to style the map. 
                 // This is where you would paste any style found on Snazzy Maps.
@@ -593,7 +593,7 @@
 
             // Let's also add a marker while we're at it
             var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(23.7286, 90.3854),
+                position: {lat: 42.3601, lng: 71.0589},
                 map: map,
                 title: 'Construction!',
                 icon: 'images/icons/map.png',

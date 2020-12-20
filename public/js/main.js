@@ -158,7 +158,7 @@ $('.project__menu button').on('click', function(event) {
       loop: true,
       margin:0,
       nav:true,
-      autoplay: false,
+      autoplay: true,
       navText: [ '<i class="zmdi zmdi-chevron-left"></i>', '<i class="zmdi zmdi-chevron-right"></i>' ],
       autoplayTimeout: 10000,
       items:1,

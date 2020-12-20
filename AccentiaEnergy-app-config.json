@@ -1,8 +1,8 @@
 {
     "apps": [
         {
-            "name":"",
-            "cwd":"",
+            "name":"accentia_n1",
+            "cwd":"/home/webaccentia/acentia",
             "script":"server.js",
             "env": {
                 "MODE":"PRO",
