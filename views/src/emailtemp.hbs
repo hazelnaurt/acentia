@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+        body {
+            background-color: #cdcdcd;
+            font-size: 16px;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #565859;
+            padding: 2%;
+        }
+        .wrapper {
+            background-color: #f6faff ;
+        }
+        .headerz__cont {
+            float: left;
+            margin: 2%;
+        }
+        .headerz__cont img {
+            width: 154px;
+            height: 49px;
+            display: block;
+        }
+        .headerz__text {
+            width: fit-content;
+            float: right;
+            margin: 3% 6% 0 0;
+        }
+        .headerz__line {
+            width: 98%;
+            height: 1px;
+            background-color: #d1d3d4;
+            clear: both;
+            margin: 0 auto;
+        }
+        .content {
+            padding: 5%;
+        }
+        .content__text {
+            margin-bottom: 1%;
+            display: inline-block;
+        }
+        .content__text--bold {
+            color: #da762f;
+            font-weight: bold;
+        }
+        .content__message {
+            margin-top: 4%;
+            line-height: 1.5;
+        }
+        .banner {
+            margin-top: 3%;
+        }
+        .banner img {
+            width: 100%;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="headerz">
+            <div class="headerz__cont">
+                <img src='{{baseurl}}/images/logo/ASCENTIA LOGO-1.png' alt="logo" title="logo">
+            </div>
+            <div class="headerz__text">
+                <h1>Support Request</h1>
+            </div>
+            <div class="headerz__line"></div>
+        </header>
+        <div class="content">
+            <div class="context__cont">
+                <p class="content__text content__text--bold">Name:</p>
+                <p class="content__text">{{name}}</p>
+            </div>
+            <div class="context__cont">
+                <p class="content__text content__text--bold">Email:</p>
+                <p class="content__text">{{email}}</p>
+            </div>
+            <div class="context__cont">
+                <p class="content__text content__text--bold">Subject:</p>
+                <p class="content__text">{{subject}}</p>
+            </div>
+            <div class="banner">
+                <img src="{{baseurl}}/images/about/1.png" alt="banner" title="banner">
+            </div>
+            <p class="content__message">{{message}}</p>
+        </div>
+    </div>
+</body>
+</html>

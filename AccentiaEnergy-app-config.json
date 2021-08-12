@@ -2,12 +2,15 @@
     "apps": [
         {
             "name":"accentia_n1",
-            "cwd":"/home/webaccentia/acentia",
+            "cwd":"/home/daniel/acentia",
             "script":"server.js",
             "env": {
                 "MODE":"PRO",
                 "PORT":8080,
-                "HOST":"127.0.0.1"
+                "HOST":"127.0.0.1",
+                "USEREMAIL":"adrian@acentiaenergy.com",
+                "PASS":"killer1234",
+                "BASE_URL":"https://acentiaenergy.com"
             }
         }
     ]
