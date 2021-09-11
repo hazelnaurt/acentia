@@ -1,13 +1,9 @@
 #!/bin/bash
 #acentia.tgz
-tar -czf update7a.tgz public/service.html \
-public/policy.html public/single-service-eng.html \
-public/single-service-ih.html public/single-service-lps.html \
-public/single-service-mar.html public/single-service-mos.html \
-public/index.html public/about.html public/clients.html public/contact.html
+#tar -czf update8a.tgz public/index.html public/about.html
 #tar -czf acentia_u2.tgz public/about.html public/index.html public/service.html public/contact.html 
 
-scp -i ~/.ssh/id_rsa_acentiae update7a.tgz daniel@213.219.37.251:~
+scp -i ~/.ssh/id_rsa_acentiae oer3.tgz daniel@213.219.37.251:~
 
 #rm -rf acentia_u2.tgz;
 
