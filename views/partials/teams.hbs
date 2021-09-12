@@ -1,0 +1,47 @@
+<section class="htc__team__area bg__white h1__team--one ptb--150 text__pos">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="section__title text-center foo">
+          <h2 class="title__line">OUR <span class="text--theme">TEAM</span></h2>
+          <p>Meet the people working endlessly to bring you the quality you
+            deserve</p>
+        </div>
+      </div>
+    </div>
+    {{#each teams}}
+      <div class="row">
+        <div class="htc__team__wrap clearfix mt--30">
+          {{#each this.list}}
+            <!-- Team member PIX -->
+            <div class="col-md-3 col-lg-3 col-sm-4 col-xs-12">
+              <div class="team foo">
+                <div class="team__inner">
+                  <div class="team__thumb">
+                    <img src="/images/team/{{this.img}}" alt="team image" />
+                  </div>
+                </div>
+                <div class="team__details">
+                  <h2><a href="#">{{this.name}}</a></h2>
+                  <h4>{{this.position}}</h4>
+                </div>
+              </div>
+            </div>
+
+            <!-- Team Profile -->
+            <div
+              class="col-md-3 col-lg-3 col-sm-4 col-xs-12"
+              style="overflow: scroll; height: 340px; margin-top: 20px;"
+            >
+              <br />
+              {{#each this.desc}}
+              <p>{{this.para}}</p></br>
+              {{/each}}
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    {{/each}}
+  </div>
+
+</section>

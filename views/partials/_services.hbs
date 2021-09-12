@@ -1,0 +1,93 @@
+<!-- Start Offer Area -->
+<section class="htc__offer__area htc__offer--2 pb--120 bg__gray">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-lg-4 hidden-sm col-xs-12 xmt-40">
+
+      </div>
+      <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+        <div class="offer foo">
+          <div class="offer__icon">
+            <img src="images/others/icon-2/1.png" alt="icon images" />
+          </div>
+          <div class="offer__details">
+            <h2><a href="#">QUALITY SERVICE</a></h2>
+            <p>We offer topnotch solutions to operators in the oil and gas
+              industry through our reliable sourcing, stocking, repairs and
+              maintenance of several oilfield tools and equipment</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 xmt-40">
+        <div class="offer separator foo">
+          <div class="offer__icon">
+            <img src="images/others/icon-2/2.png" alt="icon images" />
+          </div>
+          <div class="offer__details">
+            <h2><a href="#">Customer Support</a></h2>
+            <p>Our Manpower Sourcing team is dedicated to help customers execute
+              projects successfully within the shortest period, and at
+              competitive rates</p>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="col-md-4 col-lg-4 hidden-sm col-xs-12 xmt-40">
+                        <div class="offer separator foo">
+                            <div class="offer__icon">
+                                <img src="images/others/icon-2/3.png" alt="icon images">
+                            </div>
+                            <div class="offer__details">
+                                <h2><a href="#">LOW COST</a></h2>
+                                <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled demoralized</p>
+                            </div>
+                        </div>
+                    </div> -->
+    </div>
+  </div>
+</section>
+<!-- End Offer Area -->
+<!-- Start Service Area -->
+<section class="htc__service__area service__page bg__gray ptb--100">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="section__title text-center foo">
+          <h2 class="title__line">OUR
+            <span class="text--theme">SERVICES</span></h2>
+          <p>Acentia Energy Ghana focuses on provision of; Oilfield Procurement,
+            Maintenance And Repairs Services, Auxiliary services, Engineering
+            and Manpower Provision And Support Services</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="service__section__wrap clearfix">
+        {{#each serviceList}}
+          <!-- Start Single Service -->
+          <div class="col-md-3 col-lg-3 col-sm-4 col-xs-12">
+            <div class="service foo">
+              <div class="service__thumb">
+                <a href="/services/{{this.link}}">
+                  <img
+                    src="/images/service/{{this.img}}"
+                    alt="service images"
+                  />
+                </a>
+                <div class="service__hover">
+                  <div class="service__action">
+                    <a href="/services/{{this.link}}">DETAILS</a>
+                  </div>
+                </div>
+              </div>
+              <div class="service__details">
+                <h2><a href="/services/{{this.link}}">{{this.name}}</a></h2>
+              </div>
+            </div>
+          </div>
+          <!-- End Single Service -->
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Service Area -->
