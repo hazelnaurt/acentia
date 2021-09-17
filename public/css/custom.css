@@ -10,3 +10,23 @@
 /* ----------------------------------------------------
 	You can put your custom css code here: 
 -------------------------------------------------------*/
+
+.clienty {
+  width: 80vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+.clienty__img-cont {
+  width: 20rem;
+  margin: 2rem;
+  /*border: 3px solid black;*/
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.clienty img {
+  width: 100%;
+}

@@ -94,7 +94,7 @@ exports.homeServices = [
 ///// Projects
 
 exports.project = {
-  Desc: "Please do frequently check back to view our ongoing and completed projects",
+  Desc: "Please do frequently check back to view momemts from our latest events",
   link: "about",
   bgIMG: "Artboard 15.png",
   name: "BREAKFAST MEETING",
