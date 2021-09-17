@@ -1,101 +1,136 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const path_1 = __importDefault(require("path"));
-const fs_1 = __importDefault(require("fs"));
-const morgan_1 = __importDefault(require("morgan"));
-const nodemailer_1 = __importDefault(require("nodemailer"));
-const handlebars_1 = __importDefault(require("handlebars"));
-const app = express_1.default();
-app.set('x-powered-by', false);
-//app.engine('hbs', handlebars({
-//layoutsDir: 'views/templates/', 
-// defaultLayout: 'main', 
-//extname: 'hbs'
-//}))
-app.set('view engine', 'hbs');
-app.set('views', 'views');
-app.use(express_1.default.urlencoded({ extended: false }));
-app.use(express_1.default.json());
+const express = require("express");
+const path = require("path");
+const fs = require("fs");
+const morgan = require("morgan");
+const handlebars = require("express-handlebars");
+const { env } = require("process");
+const nodemailer = require("nodemailer");
+
+const home = require("./routes/home");
+const about = require("./routes/about");
+const clients = require("./routes/clients");
+const contact = require("./routes/contact");
+const policy = require("./routes/policy");
+const service = require("./routes/services");
+//import handlebars from "handlebars";
+
+const app = express();
+
+app.set("x-powered-by", false);
+
+app.engine(
+  "hbs",
+  handlebars({
+    layoutsDir: "views/templates/",
+    defaultLayout: "main",
+    extname: "hbs",
+  })
+);
+app.set("view engine", "hbs");
+app.set("views", "views");
+
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
 ////////////////////////////////////
 /// Static files & Logs
-let HTMLPath = '';
-if (process.env.MODE == 'PRO') {
-    HTMLPath = path_1.default.join(__dirname, 'views', 'emailtemp.hbs');
-    app.use(express_1.default.static(path_1.default.join(__dirname, 'public')));
-    const accessLogStream = fs_1.default.createWriteStream(path_1.default.join(__dirname, 'accessLog'), { flags: 'a' });
-    app.use(morgan_1.default('combined', { stream: accessLogStream }));
+app.use(express.static(path.join(__dirname, "public")));
+
+if (process.env.MODE == "PRO") {
+  const accessLogStream = fs.createWriteStream(
+    path.join(__dirname, "accessLog"),
+    { flags: "a" }
+  );
+  app.use(morgan("combined", { stream: accessLogStream }));
+} else if (process.env.MODE == "DEV") {
+  app.use(morgan("dev"));
 }
-else if (process.env.MODE == 'DEV') {
-    HTMLPath = path_1.default.join(__dirname, '..', 'views', 'emailtemp.hbs');
-    app.use(express_1.default.static(path_1.default.join(__dirname, '..', 'public')));
-    app.use(morgan_1.default('dev'));
-}
+
 // Compile template
-let template = handlebars_1.default.compile(fs_1.default.readFileSync(HTMLPath, 'utf8'));
+//let HTMLPath = "";
+//HTMLPath = path.join(__dirname, "views", "emailtemp.hbs");
+//let template = handlebars.compile(fs.readFileSync(HTMLPath, "utf8"));
+
 ////////////////////////////////////
 /// Routes
-app.get('/', (req, res, next) => {
-    res.send('index.html');
+app.use(home);
+app.use(about);
+app.use(clients);
+app.use(contact);
+app.use("/services", service);
+app.use(policy);
+
+app.get("/about", (req, res, next) => {
+  res.render("index", { title: "About Us || Acentia Energy" });
 });
-app.get('/mailme', (req, res, next) => {
-    res.render('src/emailtemp', {
-        name: 'shoalin',
-        email: 'sweet@gmail.com',
-        subject: 'Crazy Love',
-        message: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo laudantium tempora fugiat debitis dolorum ab corporis adipisci, modi sed veniam.',
-        baseurl: process.env.BASE_URL,
-        layout: false
-    });
+
+app.get("/mailme", (req, res, next) => {
+  res.render("src/emailtemp", {
+    name: "shoalin",
+    email: "sweet@gmail.com",
+    subject: "Crazy Love",
+    message:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo laudantium tempora fugiat debitis dolorum ab corporis adipisci, modi sed veniam.",
+    baseurl: process.env.BASE_URL,
+    layout: false,
+  });
 });
-app.post('/mailme', (req, res, next) => {
-    let name = req.body.name;
-    let email = req.body.email;
-    let subject = req.body.subject;
-    let message = req.body.message;
-    // create reusable transporter object using the default SMTP transport
-    let transporter = nodemailer_1.default.createTransport({
-        host: "mail.acentiaenergy.com",
-        port: 587,
-        secure: false,
-        auth: {
-            user: process.env.USEREMAIL,
-            pass: process.env.PASS,
-        },
-    });
-    // send mail with defined transport object
-    let messageInfo = {
-        from: '"Support Contact" <support@acentiaenergy.com>',
-        to: "support@acentiaenergy.com",
-        subject: "Support Contact Request",
-        text: "Hello world?",
-        html: template({
-            name: name,
-            email: email,
-            subject: subject,
-            message: message,
-            baseurl: process.env.BASE_URL
-        })
-    };
-    transporter.sendMail(messageInfo, (error, info) => {
-        if (error) {
-            return console.log(error);
-        }
-        console.log("Message sent: %s", info.messageId);
-        // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-        // Preview only available when sending through an Ethereal account
-        console.log("Preview URL: %s", nodemailer_1.default.getTestMessageUrl(info));
-        // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
-        res.send('message sent');
-    });
+
+app.post("/mailme", (req, res, next) => {
+  let name = req.body.name;
+  let email = req.body.email;
+  let subject = req.body.subject;
+  let message = req.body.message;
+
+  // create reusable transporter object using the default SMTP transport
+  let transporter = nodemailer.createTransport({
+    host: "mail.acentiaenergy.com",
+    port: 587,
+    secure: false, // true for 465, false for other ports
+    auth: {
+      user: process.env.USEREMAIL, // generated ethereal user
+      pass: process.env.PASS, // generated ethereal password
+    },
+  });
+
+  // send mail with defined transport object
+  let messageInfo = {
+    from: '"Support Contact" <adrian@acentiaenergy.com>', // sender address
+    to: "adrian@acentiaenergy.com", // list of receivers
+    subject: "Support Contact Request", // Subject line
+    text: "Hello world?", // plain text body
+    // html: template({
+    //   name: name,
+    //   email: email,
+    //   subject: subject,
+    //   message: message,
+    //   baseurl: process.env.BASE_URL,
+    // }),
+  };
+
+  transporter.sendMail(messageInfo, (error, info) => {
+    if (error) {
+      return console.log(error);
+    }
+
+    console.log("Message sent: %s", info.messageId);
+    // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+
+    // Preview only available when sending through an Ethereal account
+    console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+    // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+
+    res.send("message sent");
+  });
 });
+
 app.use((req, res, next) => {
-    res.status(404).send('<h1>Oops!! Resource not found</h1>');
+  res.status(404).send("<h1>Oops!! Resource not found</h1>");
 });
+
 app.use((error, req, res, next) => {
-    res.status(500).send('<h1>Server Error: We working on it</h1>');
+  console.log(error.message)
+  res.status(500).send("<h1>Server Error: We working on it</h1>");
 });
-exports.default = app;
+
+module.exports = app;

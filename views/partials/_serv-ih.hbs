@@ -1,1 +1,50 @@
-<h1>IMMIGRATION AND HOSPITALITY</h1>
+<section class="htc__blog__details__page ptb--150 bg__white">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12">
+        <div class="htc__page__sidebar">
+          <!-- Start SideBar -->
+          <div class="htc__category bg__gray">
+            <h2 class="sidebar__title">CATEGORIES</h2>
+            <ul class="cat__list">
+              {{#each breadCramps.sidebar}}
+                <li><a href="/services/{{this.link}}">{{this.name}}</a></li>
+              {{/each}}
+            </ul>
+          </div>
+          <!-- End SideBar -->
+
+        </div>
+      </div>
+      <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12 smt-40 xmt-40">
+        <div class="htc__single__service">
+          <div class="htc__single__service__tab">
+            <div class="ht-portfolio-pic-show">
+              <div class="ht-portfolio-full-image tab-content">
+                <div
+                  role="tabpanel"
+                  class="tab-pane fade in active"
+                  id="img-tab-1"
+                >
+                  <img
+                    src="/images/service/{{breadCramps.mainImg}}"
+                    alt="full-image"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="htc__service__dtl">
+            <!-- Start Single Service -->
+            <div class="htc__ser__dtl">
+              <!-- Description -->
+                <h2 class="title__line--4">Immigration and Hospitality</h2>
+                <p>We provide immigration and protocol services to expatriates of our clients. Our safety protocols and relaxing accommodation ensures a sound mind which goes a long way to enhance productivity. We have the safest and best plan so look no further when choosing a 
+                    local contractor or agency for partnership in the oil industry. Choose Acentia for a successful outcome. </p>
+              <!-- Description -->
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

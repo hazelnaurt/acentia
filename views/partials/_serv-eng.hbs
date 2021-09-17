@@ -1,1 +1,72 @@
-<h1>ENGINEERING</h1>
+<section class="htc__blog__details__page ptb--150 bg__white">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12">
+        <div class="htc__page__sidebar">
+          <!-- Start SideBar -->
+          <div class="htc__category bg__gray">
+            <h2 class="sidebar__title">CATEGORIES</h2>
+            <ul class="cat__list">
+              {{#each breadCramps.sidebar}}
+                <li><a href="/services/{{this.link}}">{{this.name}}</a></li>
+              {{/each}}
+            </ul>
+          </div>
+          <!-- End SideBar -->
+
+        </div>
+      </div>
+      <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12 smt-40 xmt-40">
+        <div class="htc__single__service">
+          <div class="htc__single__service__tab">
+            <div class="ht-portfolio-pic-show">
+              <div class="ht-portfolio-full-image tab-content">
+                <div
+                  role="tabpanel"
+                  class="tab-pane fade in active"
+                  id="img-tab-1"
+                >
+                  <img
+                    src="/images/service/{{breadCramps.mainImg}}"
+                    alt="full-image"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="htc__service__dtl">
+            <!-- Start Single Service -->
+            <div class="htc__ser__dtl">
+              <!-- Description -->
+              <h2 class="title__line--4">Engineering</h2>
+              <p>We remain dedicated to providing solutions that deliver
+                expected results to our customers. Acentia Energy provides an
+                experienced team of Computer Aided designers to suit our
+                client’s everyday needs. For every such project, our skilled
+                personnel are committed to the course from the design phase
+                through to the final as-built concept. We take into cognizance
+                every specific detail, bringing out various models and views to
+                enhance the understanding of each work we do. We avail ourselves
+                on regular site visits to inspect and verify the job being done.
+                We also have a team made up of experienced subsea services
+                engineers bringing an added value of supporting any subsea scope
+                with the needed skillset. Our team is well versed in handling
+                subsea operations including but not limited to HPU tests and
+                functioning, ROV tooling and functioning, SPS parts inspections
+                and verification, onshore back seal tests and SPS installations.
+                We provide the following:
+                <br /><br /><br />
+                <li>Fabrication designs, </li>
+                <li>Project planning and monitoring.</li>
+                <li>Review of project documentation.</li>
+                <li>Subsea tiebacks.</li>
+                <li>ROV tooling.</li>
+                <li>Hydraulic tests and functions.</li>
+                <li>Subsea installations.</li>
+              </p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

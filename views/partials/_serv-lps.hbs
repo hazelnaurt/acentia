@@ -1,1 +1,56 @@
-<h1>LOGISTICS / PROCUREMENT SERVICES</h1>
+<section class="htc__blog__details__page ptb--150 bg__white">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12">
+        <div class="htc__page__sidebar">
+          <!-- Start SideBar -->
+          <div class="htc__category bg__gray">
+            <h2 class="sidebar__title">CATEGORIES</h2>
+            <ul class="cat__list">
+              {{#each breadCramps.sidebar}}
+                <li><a href="/services/{{this.link}}">{{this.name}}</a></li>
+              {{/each}}
+            </ul>
+          </div>
+          <!-- End SideBar -->
+
+        </div>
+      </div>
+      <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12 smt-40 xmt-40">
+        <div class="htc__single__service">
+          <div class="htc__single__service__tab">
+            <div class="ht-portfolio-pic-show">
+              <div class="ht-portfolio-full-image tab-content">
+                <div
+                  role="tabpanel"
+                  class="tab-pane fade in active"
+                  id="img-tab-1"
+                >
+                  <img
+                    src="/images/service/{{breadCramps.mainImg}}"
+                    alt="full-image"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="htc__service__dtl">
+            <!-- Start Single Service -->
+            <div class="htc__ser__dtl">
+              <!-- Description -->
+                <h2 class="title__line--4">Logistics / Procurement Services</h2>
+                <p>We are the best when it comes to logistics. We provide a broad portfolio of transportation and logistics services. We offer you an extensive logistical system service that ensures an access of flexible network backed by a reliable carrier. Acentia Energy is the best way for businesses and individuals to make procurement and rent both industrial and domestic equipment. 
+                    We engage in the following logistical services;
+                    <br/><br/><br/>
+                    <li>1.	Vehicle acquisition </li>
+                    <li>2.	Rental of cars</li>
+                    <li>3.	Procurement of food items and necessities for the oil and gas industry.</li>    </br>                                                                                                  
+                    Quality is never compromised when you choose Acentia Energy. Contact us for all your logistics and you will never be disappointed.</p>
+
+              <!-- Description -->
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
