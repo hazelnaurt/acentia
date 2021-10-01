@@ -30,89 +30,80 @@
 [ End table content ]
 -----------------------------------*/
 
+(function ($) {
+  "use strict";
 
-(function($) {
-    'use strict';
-
-
-/*-------------------------------------------
+  /*-------------------------------------------
   01. jQuery MeanMenu
 --------------------------------------------- */
-    
-$('.mobile-menu nav').meanmenu({
-    meanMenuContainer: '.mobile-menu-area',
+
+  $(".mobile-menu nav").meanmenu({
+    meanMenuContainer: ".mobile-menu-area",
     meanScreenWidth: "991",
     meanRevealPosition: "right",
-});
-/*-------------------------------------------
+  });
+  /*-------------------------------------------
   02. wow js active
 --------------------------------------------- */
-    new WOW().init();
+  new WOW().init();
 
-
-/*-------------------------------------------
+  /*-------------------------------------------
   03. Project  Masonry
---------------------------------------------- */ 
+--------------------------------------------- */
 
-$('.htc__project__container').imagesLoaded( function() {
-  
+  $(".htc__project__container").imagesLoaded(function () {
     // filter items on button click
-    $('.project__menu').on( 'click', 'button', function() {
-      var filterValue = $(this).attr('data-filter');
+    $(".project__menu").on("click", "button", function () {
+      var filterValue = $(this).attr("data-filter");
       $grid.isotope({ filter: filterValue });
-    }); 
+    });
     // init Isotope
-    var $grid = $('.htc__latest__project__wrap').isotope({
-      itemSelector: '.single__project',
+    var $grid = $(".htc__latest__project__wrap").isotope({
+      itemSelector: ".single__project",
       percentPosition: true,
-      transitionDuration: '0.7s',
-      layoutMode: 'fitRows',
+      transitionDuration: "0.7s",
+      layoutMode: "fitRows",
       masonry: {
         // use outer width of grid-sizer for columnWidth
-        columnWidth: '.single__project',
-      }
+        columnWidth: ".single__project",
+      },
     });
+  });
 
-});
-
-$('.project__menu button').on('click', function(event) {
-    $(this).siblings('.is-checked').removeClass('is-checked');
-    $(this).addClass('is-checked');
+  $(".project__menu button").on("click", function (event) {
+    $(this).siblings(".is-checked").removeClass("is-checked");
+    $(this).addClass("is-checked");
     event.preventDefault();
-});
+  });
 
-
-
-/*-------------------------------------------
+  /*-------------------------------------------
   04. Sticky Header
---------------------------------------------- */ 
+--------------------------------------------- */
 
-  $(window).on('scroll',function() {    
+  $(window).on("scroll", function () {
     var scroll = $(window).scrollTop();
     if (scroll < 245) {
-    $("#sticky-header-with-topbar").removeClass("scroll-header");
-    }else{
-    $("#sticky-header-with-topbar").addClass("scroll-header");
+      $("#sticky-header-with-topbar").removeClass("scroll-header");
+    } else {
+      $("#sticky-header-with-topbar").addClass("scroll-header");
     }
   });
 
-
-/*--------------------------
+  /*--------------------------
   05. ScrollUp
 ---------------------------- */
 
   $.scrollUp({
     scrollText: '<i class="zmdi zmdi-chevron-up"></i>',
-    easingType: 'linear',
+    easingType: "linear",
     scrollSpeed: 900,
-    animation: 'fade'
+    animation: "fade",
   });
 
-
-/*---------------------------------------------
+  /*---------------------------------------------
   06. Testimonial Slick Carousel
 ------------------------------------------------*/
-  $('.testimonial__activation').slick({
+  $(".testimonial__activation").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
@@ -121,11 +112,10 @@ $('.project__menu button').on('click', function(event) {
     dots: true,
   });
 
-
-/*------------------------------------------
+  /*------------------------------------------
   07. Testimonial Slick Carousel
 -------------------------------------------*/
-  $('.testimonial__activation--2').slick({
+  $(".testimonial__activation--2").slick({
     slidesToShow: 2,
     slidesToScroll: 2,
     arrows: false,
@@ -134,125 +124,100 @@ $('.project__menu button').on('click', function(event) {
     dots: true,
   });
 
-
-
-/*-----------------------------
+  /*-----------------------------
   08. CounterUp
 -----------------------------*/
-  $('.count').counterUp({
+  $(".count").counterUp({
     delay: 60,
-    time: 3000
+    time: 3000,
   });
 
-
-
-
-
-
-/*-----------------------------------------------
+  /*-----------------------------------------------
   15. Home Slider
 -------------------------------------------------*/
 
-  if ($('.slider__activation__wrap').length) {
-    $('.slider__activation__wrap').owlCarousel({
+  if ($(".slider__activation__wrap").length) {
+    $(".slider__activation__wrap").owlCarousel({
       loop: true,
-      margin:0,
-      nav:true,
+      margin: 0,
+      nav: true,
       autoplay: true,
-      navText: [ '<i class="zmdi zmdi-chevron-left"></i>', '<i class="zmdi zmdi-chevron-right"></i>' ],
+      navText: [
+        '<i class="zmdi zmdi-chevron-left"></i>',
+        '<i class="zmdi zmdi-chevron-right"></i>',
+      ],
       autoplayTimeout: 10000,
-      items:1,
+      items: 1,
       dots: false,
       lazyLoad: true,
-      responsive:{
-        0:{
-          items:1
+      responsive: {
+        0: {
+          items: 1,
         },
-        600:{
-          items:1
-        }
-      }
+        600: {
+          items: 1,
+        },
+      },
     });
   }
 
-
-
-/*-----------------------------------
+  /*-----------------------------------
   16. ScrollReveal Js Init
 -------------------------------------- */
 
-  window.sr = ScrollReveal({ duration: 800 , reset: true });
-    sr.reveal('.foo');
-    sr.reveal('.bar');
+  window.sr = ScrollReveal({ duration: 800, reset: true });
+  sr.reveal(".foo");
+  sr.reveal(".bar");
 
-
-
-
-
-
-/*--------------------------------
+  /*--------------------------------
   17. Magnific Popup
 ----------------------------------*/
 
-$('.video-popup').magnificPopup({
-  type: 'iframe',
-  mainClass: 'mfp-fade',
-  removalDelay: 160,
-  preloader: false,
-  zoom: {
+  $(".video-popup").magnificPopup({
+    type: "iframe",
+    mainClass: "mfp-fade",
+    removalDelay: 160,
+    preloader: false,
+    zoom: {
       enabled: true,
-  }
-});
+    },
+  });
 
-$('.image-popup').magnificPopup({
-  type: 'image',
-  mainClass: 'mfp-fade',
-  removalDelay: 100,
-  gallery:{
-      enabled:true, 
-  }
-});
+  $(".image-popup").magnificPopup({
+    type: "image",
+    mainClass: "mfp-fade",
+    removalDelay: 100,
+    gallery: {
+      enabled: true,
+    },
+  });
 
-
-
-
-
-
-/*-----------------------------------------------
+  /*-----------------------------------------------
   16. Blog Slider
 -------------------------------------------------*/
 
-  if ($('.blog__activation').length) {
-    $('.blog__activation').owlCarousel({
+  if ($(".blog__activation").length) {
+    $(".blog__activation").owlCarousel({
       loop: true,
-      margin:0,
-      nav:true,
+      margin: 0,
+      nav: true,
       autoplay: false,
-      navText: [ '<i class="zmdi zmdi-chevron-left"></i>', '<i class="zmdi zmdi-chevron-right"></i>' ],
+      navText: [
+        '<i class="zmdi zmdi-chevron-left"></i>',
+        '<i class="zmdi zmdi-chevron-right"></i>',
+      ],
       autoplayTimeout: 10000,
-      items:1,
+      items: 1,
       dots: false,
       lazyLoad: true,
-      responsive:{
-        0:{
-          items:1
+      responsive: {
+        0: {
+          items: 1,
         },
-        600:{
-          items:1
-        }
-      }
+        600: {
+          items: 1,
+        },
+      },
     });
   }
-
-
-
-
-
-
-
-
 })(jQuery);
-
-
-
-

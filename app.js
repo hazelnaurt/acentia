@@ -12,6 +12,7 @@ const clients = require("./routes/clients");
 const contact = require("./routes/contact");
 const policy = require("./routes/policy");
 const service = require("./routes/services");
+const gallery = require("./routes/gallery");
 //import handlebars from "handlebars";
 
 const app = express();
@@ -59,6 +60,7 @@ app.use(clients);
 app.use(contact);
 app.use("/services", service);
 app.use(policy);
+app.use(gallery);
 
 app.get("/about", (req, res, next) => {
   res.render("index", { title: "About Us || Acentia Energy" });
@@ -129,7 +131,7 @@ app.use((req, res, next) => {
 });
 
 app.use((error, req, res, next) => {
-  console.log(error.message)
+  console.log(error.message);
   res.status(500).send("<h1>Server Error: We working on it</h1>");
 });
 
