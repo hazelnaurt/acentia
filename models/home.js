@@ -95,7 +95,7 @@ exports.homeServices = [
 
 exports.project = {
   Desc: "Please do frequently check back to view momemts from our latest events",
-  link: "gallery",
+  link: "events",
   bgIMG: "Artboard 15.png",
   name: "BREAKFAST MEETING",
   date: "20th of August, 2021",
@@ -103,25 +103,25 @@ exports.project = {
 
 exports.projectList = [
   {
-    link: "gallery",
+    link: "events",
     img: "Artboard 10.png",
     name: "BREAKFAST MEETING",
     date: "20th of August, 2021",
   },
   {
-    link: "gallery",
+    link: "events",
     img: "Artboard 13.png",
     name: "BREAKFAST MEETING",
     date: "20th of August, 2021",
   },
   {
-    link: "gallery",
+    link: "events",
     img: "Artboard 14.png",
     name: "BREAKFAST MEETING",
     date: "20th of August, 2021",
   },
   {
-    link: "gallery",
+    link: "events",
     img: "Artboard 16.png",
     name: "BREAKFAST MEETING",
     date: "20th of August, 2021",

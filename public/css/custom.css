@@ -10,6 +10,22 @@
 /* ----------------------------------------------------
 	You can put your custom css code here: 
 -------------------------------------------------------*/
+.event-b {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding-top: 3rem;
+}
+
+.event-b h1 {
+  margin-bottom: 1rem;
+}
+
+.event-b p {
+  width: 60%;
+}
 
 .clienty {
   width: 80vw;

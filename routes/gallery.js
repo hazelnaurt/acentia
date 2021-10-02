@@ -1,7 +1,7 @@
 const express = require("express");
 
 const breadCramps = {
-  title: "Gallery",
+  title: "Events",
   img: "3.png",
   prev: [
     {
@@ -13,9 +13,9 @@ const breadCramps = {
 
 const router = express.Router();
 
-router.get("/gallery", (req, res, next) => {
+router.get("/events", (req, res, next) => {
   res.render("gallery", {
-    title: "Gallery || Acentia Energy",
+    title: "Events || Acentia Energy",
     breadCramps,
     layout: false,
   });
