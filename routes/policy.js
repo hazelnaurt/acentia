@@ -15,7 +15,7 @@ const breadCramps = {
 const router = express.Router();
 
 router.get("/Policy", (req, res, next) => {
-  res.render("Policy", {
+  res.render("policy", {
     title: "Policy || Acentia Energy",
     breadCramps,
     layout: false,
