@@ -60,7 +60,7 @@ app.use(clients);
 app.use(contact);
 app.use("/services", service);
 app.use(policy);
-app.use(gallery);
+app.use("/events", gallery);
 
 app.get("/about", (req, res, next) => {
   res.render("index", { title: "About Us || Acentia Energy" });

@@ -95,34 +95,34 @@ exports.homeServices = [
 
 exports.project = {
   Desc: "Please do frequently check back to view momemts from our latest events",
-  link: "events",
-  bgIMG: "Artboard 15.png",
-  name: "BREAKFAST MEETING",
+  link: "events/coporate-social-responsibility",
+  bgIMG: "csr/Artboard 8.png",
+  name: "Corporate Social Responsibility Project",
   date: "20th of August, 2021",
 };
 
 exports.projectList = [
   {
-    link: "events",
-    img: "Artboard 10.png",
-    name: "BREAKFAST MEETING",
+    link: "events/carreer-guidance-conference",
+    img: "cgc/Artboard 2.png",
+    name: "Carreer Guidance Conference",
     date: "20th of August, 2021",
   },
   {
-    link: "events",
-    img: "Artboard 13.png",
-    name: "BREAKFAST MEETING",
+    link: "events/visit-to-the-new-inuagurated-osu-mantse",
+    img: "vni/Artboard 1.png",
+    name: "Visit to the New Inuagurated Osu Mantse",
     date: "20th of August, 2021",
   },
   {
-    link: "events",
-    img: "Artboard 14.png",
-    name: "BREAKFAST MEETING",
+    link: "events/coporate-social-responsibility",
+    img: "csr/Artboard 9.png",
+    name: "Corporate Social Responsibility Project",
     date: "20th of August, 2021",
   },
   {
-    link: "events",
-    img: "Artboard 16.png",
+    link: "events/breakfast-meeting",
+    img: "lst-project-3/Artboard 16.png",
     name: "BREAKFAST MEETING",
     date: "20th of August, 2021",
   },
