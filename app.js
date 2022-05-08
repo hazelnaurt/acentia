@@ -12,7 +12,7 @@ const clients = require("./routes/clients");
 const contact = require("./routes/contact");
 const policy = require("./routes/policy");
 const service = require("./routes/services");
-const gallery = require("./routes/gallery");
+const events = require("./routes/events");
 //import handlebars from "handlebars";
 
 const app = express();
@@ -60,7 +60,7 @@ app.use(clients);
 app.use(contact);
 app.use("/services", service);
 app.use(policy);
-app.use("/events", gallery);
+app.use("/events", events);
 
 app.get("/about", (req, res, next) => {
   res.render("index", { title: "About Us || Acentia Energy" });

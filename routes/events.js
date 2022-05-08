@@ -13,8 +13,16 @@ const breadCramps = {
 
 const router = express.Router();
 
+router.get("/", (req, res, next) => {
+  res.render("events", {
+    title: "Events || Acentia Energy",
+    breadCramps,
+    layout: false,
+  });
+});
+
 router.get("/breakfast-meeting", (req, res, next) => {
-  res.render("gallery", {
+  res.render("event-breakfast", {
     title: "Events || Acentia Energy",
     breadCramps,
     layout: false,
